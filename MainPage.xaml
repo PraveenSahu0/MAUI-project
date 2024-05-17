@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:local="clr-namespace:Pagination"
+             x:Class="Pagination.MainPage">
+    <StackLayout>
+        <CollectionView ItemsSource="{Binding Products}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding Name}" FontSize="Medium" />
+                        <Label Text="{Binding Description}" FontSize="Small" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10">
+            <Button Text="Previous" Command="{Binding LoadPreviousPageCommand}" />
+            <Button Text="Next" Command="{Binding LoadNextPageCommand}" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
